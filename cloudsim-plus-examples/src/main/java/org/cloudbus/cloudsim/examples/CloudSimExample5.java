@@ -124,7 +124,7 @@ public class CloudSimExample5 {
                     .setUtilizationModel(utilizationModel);
 
         Cloudlet cloudlet2 =
-            new CloudletSimple(++id, length, pesNumber)
+            new CloudletSimple(++id, 2000, pesNumber)
                 .setFileSize(fileSize)
                 .setOutputSize(outputSize)
                 .setUtilizationModel(utilizationModel);

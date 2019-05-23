@@ -175,7 +175,7 @@ public class MinTimeBetweenEventsExample {
     }
 
     /**
-     * Creates a list of Cloudlets to be run inside a given VM
+     * Creates a list of Cloudlets to be run   a given VM
      * @param vm the VM to run the Cloudlets
      */
     private void createAndSubmitCloudlets(final Vm vm) {

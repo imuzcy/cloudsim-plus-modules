@@ -41,7 +41,9 @@ public class CloudSimExample0 {
 
     private final CloudSim simulation;
     private List<Vm> vmList;
+    private List<Cloudlet> global_cloudletList;
     private List<Cloudlet> cloudletList;
+    public int time;
 
     /**
      * Starts the example.
@@ -67,6 +69,8 @@ public class CloudSimExample0 {
         on behalf of a given cloud user (customer).*/
         DatacenterBroker broker0 = new DatacenterBrokerSimple(simulation);
 
+
+
         this.vmList = new ArrayList<>(VMS);
         this.cloudletList = new ArrayList<>(VMS);
 
@@ -80,14 +84,14 @@ public class CloudSimExample0 {
                 /*Creates a Cloudlet that represents an application to be run inside a VM.*/
                 Cloudlet cloudlet = createCloudlet(broker0, vm);
                 this.cloudletList.add(cloudlet);
-            }
+        }
         }
         broker0.submitVmList(vmList);
         broker0.submitCloudletList(cloudletList);
 
+
         /* Starts the simulation and waits all cloudlets to be executed. */
         simulation.start();
-
         /*Prints results when the simulation is over
         (you can use your own code here to print what you want from this cloudlet list)*/
         List<Cloudlet> finishedCloudlets = broker0.getCloudletFinishedList();
